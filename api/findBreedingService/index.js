@@ -1,5 +1,5 @@
-const findBreedingServiceWorkflow=require('./findBreedingServiceWorkflow')
+const findBreedingServiceWorkflow = require('./findBreedingServiceWorkflow');
 
-module.exports.run=async function(){
-    return await findBreedingServiceWorkflow.workflow();
-}
+module.exports.run = async () => {
+  return await findBreedingServiceWorkflow.workflow();
+};
