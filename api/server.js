@@ -4,9 +4,7 @@ const config = require('./config');
 const app = express();
 app.use(express.static('public'));
 app.use(cors());
-const index=require('./findBreedingService/index');
-
-
+const index = require('./findBreedingService/index');
 
 app.get('/', (req, res) => {
   const help = `
@@ -20,11 +18,10 @@ app.get('/', (req, res) => {
   res.send(help);
 });
 
-
-app.get('/api/findBreeding', async(req, res) => {
- const data = await index.run();
- console.log(data);
-   res.json(data);
+app.get('/api/findBreeding', async (req, res) => {
+  const data = await index.run();
+  //console.log(data);
+  res.json(data);
 });
 
 app.listen(config.port, () => {
