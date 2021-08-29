@@ -19,6 +19,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/findBreeding', async (req, res) => {
+  const token =req.headers['x-access-key'];
+  if(!token) return res.status(401).send({auth:false, message:"no token provided, you can provide whatever you want"});
+
   const data = await index.run();
   //console.log(data);
   res.json(data);

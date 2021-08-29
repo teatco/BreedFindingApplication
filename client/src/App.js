@@ -1,25 +1,46 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
+import * as FindCatAPI from './utils/FindCatAPI'
+import ListCats from './components/ListCats'
 
-function App() {
+
+class App extends Component{
+
+  state ={
+    dogFriendlyCats:[],
+    childFriendlyCats:[],
+    strangerFriendlyCats:[]
+  }
+
+  componentDidMount() {
+    FindCatAPI.getAllDogsFriendlyCats()
+      .then((dogFriendlyCats ) => {
+        this.setState(()=>({
+          dogFriendlyCats
+        }))
+      });
+
+    FindCatAPI.getAllChildFriendlyCats()
+    .then((childFriendlyCats)=>{
+      this.setState(()=>({childFriendlyCats}))
+    });
+
+    FindCatAPI.getAllStrangerFriendlyCats()
+    .then((strangerFriendlyCats)=>{
+      this.setState(()=>({strangerFriendlyCats}))
+    })
+  }
+
+  render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ListCats dogFriendlyCats={this.state.dogFriendlyCats}
+                childFriendlyCats={this.state.childFriendlyCats}
+                strangerFriendlyCats={this.state.strangerFriendlyCats}
+                />
     </div>
   );
+}
 }
 
 export default App;
