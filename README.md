@@ -23,7 +23,7 @@ simple app to find the 5 top popular cats that are child friendly, stranger frie
 4. getCatBreedsData: to make a secure connection to the cat apis and pull out the cat data
 5. digestCatBreedsData: to process the cat data and return the top 5 cat breeds that are child friendly, dog friendly and stranger friendly that share the same weighting
 6. ListCats: a component to list all the cats 
-7. FindCatAPI: to make a secure connection to the server and grap al cats data
+7. FindCatAPI: to make a secure connection to the server and grap all cats' data
 
 
 
