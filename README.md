@@ -17,26 +17,12 @@ simple app to find the 5 top popular cats that are child friendly, stranger frie
 
 # classes
 
-1. #server: to establish the express service, this application includes only one service
+1. server: to establish the express service, this application includes only one service
 2. index: each service is accessed by index modules
 3. findBreedingServiceWorkflow: to structure the workflow of the service
 4. getCatBreedsData: to make a secure connection to the cat apis and pull out the cat data
 5. digestCatBreedsData: to process the cat data and return the top 5 cat breeds that are child friendly, dog friendly and stranger friendly that share the same weighting
 
-#Techniques
 
-• Best coding practices
-
-• Scalability
-
-• Reliability
-
-• Reusability
-
-• Responsiveness
-
-• Performance
-
-• Security
 
 
